@@ -69,6 +69,29 @@
     ]
   },
   {
+    "id": "rule-7",
+    "upstream": {
+      "url": "https://httpbin.org"
+    },
+    "match": {
+      "url": "http<[s]?>://<[^/]+>/auth0/httpbin",
+      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
+    },
+    "authenticators": [
+      {
+        "handler": "noop"
+      }
+    ],
+    "authorizer": {
+      "handler": "allow"
+    },
+    "mutators": [
+      {
+        "handler": "noop"
+      }
+    ]
+  },
+  {
     "id": "auth0-rule",
     "upstream": {
       "url": "http://oathkeeper-auth0:9000"

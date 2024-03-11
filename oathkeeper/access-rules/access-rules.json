@@ -2,7 +2,7 @@
   {
     "id": "rule-4",
     "upstream": {
-      "url": "http<[s]?>://httpbin.org/anything"
+      "url": "https://httpbin.org/anything"
     },
     "match": {
       "url": "https://<[^/]+>/authenticator/noop/authorizer/allow/mutator/noop",
@@ -28,7 +28,7 @@
       "url": "https://httpbin.org/anything"
     },
     "match": {
-      "url": "http<[s]?>://<[^/]+>/authenticator/anonymous/authorizer/allow/mutator/header",
+      "url": "https://<[^/]+>/authenticator/anonymous/authorizer/allow/mutator/header",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
     },
     "authenticators": [
@@ -51,7 +51,7 @@
       "url": "https://httpbin.org/anything"
     },
     "match": {
-      "url": "http<[s]?>://<[^/]+>/authenticator/anonymous/authorizer/allow/mutator/id_token",
+      "url": "https://<[^/]+>/authenticator/anonymous/authorizer/allow/mutator/id_token",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
     },
     "authenticators": [

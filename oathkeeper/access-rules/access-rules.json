@@ -33,7 +33,15 @@
     },
     "authenticators": [
       {
-        "handler": "jwt"
+        "handler": "jwt",
+        "config": {
+          "to": "http://my-website/login",
+          "return_to_query_param": "return_to",
+          "code": 301,
+          "when": [
+            error: ["unauthorized"]
+          ]
+        }
       }
     ],
     "authorizer": {

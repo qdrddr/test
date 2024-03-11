@@ -2,7 +2,7 @@
   {
     "id": "rule-4",
     "upstream": {
-      "url": "https://httpbin.org/anything"
+      "url": "http://oathkeeper-auth0:9000"
     },
     "match": {
       "url": "http<[s]?>://<[^/]+>/authenticator2/noop/authorizer/allow/mutator/noop",

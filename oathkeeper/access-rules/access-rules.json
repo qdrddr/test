@@ -5,7 +5,7 @@
       "url": "https://httpbin.org/anything"
     },
     "match": {
-      "url": "http<[s]?>://<[^/]+>/authenticator/noop/authorizer/allow/mutator/noop",
+      "url": "http<[s]?>://<[^/]+>/authenticator2/noop/authorizer/allow/mutator/noop",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
     },
     "authenticators": [
@@ -65,29 +65,6 @@
     "mutators": [
       {
         "handler": "id_token"
-      }
-    ]
-  },
-  {
-    "id": "rule-7",
-    "upstream": {
-      "url": "https://httpbin.org/anything"
-    },
-    "match": {
-      "url": "http<[s]?>://<[^/]+>/authenticator2/noop/authorizer/allow/mutator/noop",
-      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
-    },
-    "authenticators": [
-      {
-        "handler": "noop"
-      }
-    ],
-    "authorizer": {
-      "handler": "allow"
-    },
-    "mutators": [
-      {
-        "handler": "noop"
       }
     ]
   },

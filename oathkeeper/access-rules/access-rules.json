@@ -35,7 +35,7 @@
       {
         "handler": "jwt",
         "config": {
-          "to": "http://my-website/login",
+          "to": "https://proxy-oathk.wiseinfotec.net/auth0/authorize",
           "return_to_query_param": "return_to",
           "code": "301",
           "when": [

@@ -41,7 +41,12 @@
     },
     "mutators": [
       {
-        "handler": "header"
+        "handler": "header",
+        "config": {
+          "headers": {
+            "X-User": "{{ print .Subject }}"
+          }
+        }
       }
     ]
   }

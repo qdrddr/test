@@ -67,5 +67,51 @@
         "handler": "id_token"
       }
     ]
+  },
+  {
+    "id": "auth0-rule",
+    "upstream": {
+      "url": "https://httpbin.org/anything"
+    },
+    "match": {
+      "url": "https://proxy-oathk.wiseinfotec.net/auth0/<.*>",
+      "methods": ["GET"]
+    },
+    "authenticators": [
+      {
+        "handler": "noop"
+      }
+    ],
+    "authorizer": {
+      "handler": "allow"
+    },
+    "mutators": [
+      {
+        "handler": "noop"
+      }
+    ]
+  },
+  {
+    "id": "backend-service-rule",
+    "upstream": {
+      "url": "https://httpbin.org/anything"
+    },
+    "match": {
+      "url": "https://proxy-oathk.wiseinfotec.net/<(?!auth).*>",
+      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
+    },
+    "authenticators": [
+      {
+        "handler": "jwt"
+      }
+    ],
+    "authorizer": {
+      "handler": "allow"
+    },
+    "mutators": [
+      {
+        "handler": "header"
+      }
+    ]
   }
 ]

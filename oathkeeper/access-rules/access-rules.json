@@ -35,9 +35,9 @@
       {
         "handler": "jwt",
         "config": {
-          "to": "http://my-website/login", // required!!
+          "to": "http://my-website/login",
           "return_to_query_param": "return_to",
-          "code": "301", // defaults to 302 - only 301 and 302 are supported.
+          "code": "301",
           "when": [
             "error": ["unauthorized"]
           ]

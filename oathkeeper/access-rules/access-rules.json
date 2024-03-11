@@ -71,7 +71,7 @@
   {
     "id": "auth0-rule",
     "upstream": {
-      "url": "https://httpbin.org/anything"
+      "url": "http://oathkeeper-auth0:9000"
     },
     "match": {
       "url": "https://proxy-oathk.wiseinfotec.net/auth0/<.*>",

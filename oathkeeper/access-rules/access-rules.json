@@ -1,0 +1,82 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oathkeeper-rules
+  labels:
+    app.kubernetes.io/instance: oathkeeper
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: oathkeeper
+    argocd.argoproj.io/instance: oathkeeper
+data:
+  access-rules.json: |
+    [
+      {
+        "id": "rule-4",
+        "upstream": {
+          "url": "https://httpbin.org/anything"
+        },
+        "match": {
+          "url": "https://<[^/]+>/authenticator/noop/authorizer/allow/mutator/noop",
+          "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
+        },
+        "authenticators": [
+          {
+            "handler": "noop"
+          }
+        ],
+        "authorizer": {
+          "handler": "allow"
+        },
+        "mutators": [
+          {
+            "handler": "noop"
+          }
+        ]
+      },
+      {
+        "id": "rule-5",
+        "upstream": {
+          "url": "https://httpbin.org/anything"
+        },
+        "match": {
+          "url": "https://<[^/]+>/authenticator/anonymous/authorizer/allow/mutator/header",
+          "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
+        },
+        "authenticators": [
+          {
+            "handler": "anonymous"
+          }
+        ],
+        "authorizer": {
+          "handler": "allow"
+        },
+        "mutators": [
+          {
+            "handler": "header"
+          }
+        ]
+      },
+      {
+        "id": "rule-6",
+        "upstream": {
+          "url": "https://httpbin.org/anything"
+        },
+        "match": {
+          "url": "https://<[^/]+>/authenticator/anonymous/authorizer/allow/mutator/id_token",
+          "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
+        },
+        "authenticators": [
+          {
+            "handler": "anonymous"
+          }
+        ],
+        "authorizer": {
+          "handler": "allow"
+        },
+        "mutators": [
+          {
+            "handler": "id_token"
+          }
+        ]
+      }
+    ]

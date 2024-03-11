@@ -5,7 +5,7 @@
       "url": "https://httpbin.org/anything"
     },
     "match": {
-      "url": "https://<[^/]+>/authenticator/noop/authorizer/allow/mutator/noop",
+      "url": "http<[s]?>://<[^/]+>/authenticator/noop/authorizer/allow/mutator/noop",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
     },
     "authenticators": [
@@ -28,7 +28,7 @@
       "url": "https://httpbin.org/anything"
     },
     "match": {
-      "url": "https://<[^/]+>/authenticator/anonymous/authorizer/allow/mutator/header",
+      "url": "http<[s]?>://<[^/]+>/authenticator/anonymous/authorizer/allow/mutator/header",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
     },
     "authenticators": [
@@ -51,7 +51,7 @@
       "url": "https://httpbin.org/anything"
     },
     "match": {
-      "url": "https://<[^/]+>/authenticator/anonymous/authorizer/allow/mutator/id_token",
+      "url": "http<[s]?>://<[^/]+>/authenticator/anonymous/authorizer/allow/mutator/id_token",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
     },
     "authenticators": [

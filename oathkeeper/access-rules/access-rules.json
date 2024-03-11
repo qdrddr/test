@@ -39,7 +39,7 @@
           "return_to_query_param": "return_to",
           "code": 301,
           "when": [
-            error: ["unauthorized"]
+            "error": ["unauthorized"]
           ]
         }
       }

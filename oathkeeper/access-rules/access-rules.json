@@ -44,7 +44,8 @@
         "handler": "header",
         "config": {
           "headers": {
-            "X-User": "{{ print .Subject }}"
+            "x-user-id": "{{ print .Subject }}",
+            "x-user-email": ""
           }
         }
       }

@@ -34,12 +34,12 @@
     "authenticators": [
       {
         "handler": "jwt",
-        config: {
-          to: "http://my-website/login", // required!!
-          return_to_query_param: "return_to",
-          code: 301, // defaults to 302 - only 301 and 302 are supported.
-          when: [
-            error: ["unauthorized"]
+        "config": {
+          "to": "http://my-website/login", // required!!
+          "return_to_query_param": "return_to",
+          "code": "301", // defaults to 302 - only 301 and 302 are supported.
+          "when": [
+            "error": ["unauthorized"]
           ]
         }
       }

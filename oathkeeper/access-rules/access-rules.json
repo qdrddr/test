@@ -48,7 +48,7 @@
   {
     "id": "whoami-service-rule",
     "upstream": {
-      "url": "http://oauth2-jwt-whoami:9001"
+      "url": "http://oathkeeper-oauth2-jwt-whoami:9001"
     },
     "match": {
       "url": "https://proxy-oathk.wiseinfotec.net/whoami",

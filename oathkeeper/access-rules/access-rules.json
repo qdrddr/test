@@ -23,7 +23,7 @@
     ]
   },
   {
-    "id": "oauth2-jwt-rule",
+    "id": "oathkeeper-oauth2-jwt-service-rule",
     "upstream": {
       "url": "http://oathkeeper-oauth2-jwt:9000"
     },
@@ -46,7 +46,7 @@
     ]
   },
   {
-    "id": "whoami-service-rule",
+    "id": "oathkeeper-oauth2-jwt-whoami-service-rule",
     "upstream": {
       "url": "http://oathkeeper-oauth2-jwt-whoami:9001"
     },

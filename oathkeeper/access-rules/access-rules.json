@@ -1,28 +1,5 @@
 [
   {
-    "id": "auth0-rule",
-    "upstream": {
-      "url": "http://oathkeeper-auth0:9000"
-    },
-    "match": {
-      "url": "https://proxy-oathk.wiseinfotec.net/auth0/<.*>",
-      "methods": ["GET"]
-    },
-    "authenticators": [
-      {
-        "handler": "noop"
-      }
-    ],
-    "authorizer": {
-      "handler": "allow"
-    },
-    "mutators": [
-      {
-        "handler": "noop"
-      }
-    ]
-  },
-  {
     "id": "oathkeeper-oauth2-jwt-service-rule",
     "upstream": {
       "url": "http://oathkeeper-oauth2-jwt:9000"
@@ -98,7 +75,7 @@
         "handler": "header",
         "config": {
           "headers": {
-            "X-User": "{{ print .Subject }}",
+            "X-User-id": "{{ print .Subject }}",
             "x-user-email": "{{ print .Extra.email }}",
             "x-user-picture": "{{ print .Extra.picture }}"
           }

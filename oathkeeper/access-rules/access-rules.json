@@ -48,10 +48,10 @@
   {
     "id": "backend-service-rule",
     "upstream": {
-      "url": "https://httpbin.org/"
+      "url": "https://httpbin.org/anything"
     },
     "match": {
-      "url": "https://proxy-oathk.wiseinfotec.net/<(?!auth).*>",
+      "url": "https://proxy-oathk.wiseinfotec.net/anything",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
     },
     "authenticators": [

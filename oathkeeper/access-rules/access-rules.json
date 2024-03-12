@@ -25,7 +25,7 @@
   {
     "id": "backend-service-rule",
     "upstream": {
-      "url": "http://oathkeeper-whoami:9001/whoami"
+      "url": "http://oathkeeper-whoami:9001/"
     },
     "match": {
       "url": "https://proxy-oathk.wiseinfotec.net/whoami",

@@ -23,6 +23,29 @@
     ]
   },
   {
+    "id": "oauth2-jwt-rule",
+    "upstream": {
+      "url": "http://oathkeeper-oauth2-jwt:9000"
+    },
+    "match": {
+      "url": "https://proxy-oathk.wiseinfotec.net/myauth/<.*>",
+      "methods": ["GET"]
+    },
+    "authenticators": [
+      {
+        "handler": "noop"
+      }
+    ],
+    "authorizer": {
+      "handler": "allow"
+    },
+    "mutators": [
+      {
+        "handler": "noop"
+      }
+    ]
+  },
+  {
     "id": "backend-service-rule",
     "upstream": {
       "url": "http://oathkeeper-whoami:9001"

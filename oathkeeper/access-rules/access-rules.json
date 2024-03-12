@@ -23,6 +23,29 @@
     ]
   },
   {
+    "id": "whoami-rule",
+    "upstream": {
+      "url": "http://oathkeeper-whoami:9001/whoami"
+    },
+    "match": {
+      "url": "https://proxy-oathk.wiseinfotec.net/whoami",
+      "methods": ["GET"]
+    },
+    "authenticators": [
+      {
+        "handler": "noop"
+      }
+    ],
+    "authorizer": {
+      "handler": "allow"
+    },
+    "mutators": [
+      {
+        "handler": "noop"
+      }
+    ]
+  },
+  {
     "id": "backend-service-rule",
     "upstream": {
       "url": "https://httpbin.org/"

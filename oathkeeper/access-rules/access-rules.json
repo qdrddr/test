@@ -23,6 +23,29 @@
     ]
   },
   {
+    "id": "login-rule",
+    "upstream": {
+      "url": "http://oathkeeper-login:9002"
+    },
+    "match": {
+      "url": "https://proxy-oathk.wiseinfotec.net/login",
+      "methods": ["GET"]
+    },
+    "authenticators": [
+      {
+        "handler": "noop"
+      }
+    ],
+    "authorizer": {
+      "handler": "allow"
+    },
+    "mutators": [
+      {
+        "handler": "noop"
+      }
+    ]
+  },
+  {
     "id": "backend-service-rule",
     "upstream": {
       "url": "http://oathkeeper-whoami:9001"
@@ -45,6 +68,37 @@
         "config": {
           "headers": {
             "x-user-id": "{{ print .Subject }}",
+            "x-user-email": "{{ print .Extra.email }}",
+            "x-user-picture": "{{ print .Extra.picture }}"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "httpbin-rule",
+    "upstream": {
+      "url": "https://httpbin.org/",
+      "strip_path": "/httpbin"
+    },
+    "match": {
+      "url": "https://proxy-oathk.wiseinfotec.net/httpbin/<.*>",
+      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
+    },
+    "authenticators": [
+      {
+        "handler": "jwt"
+      }
+    ],
+    "authorizer": {
+      "handler": "allow"
+    },
+    "mutators": [
+      {
+        "handler": "header",
+        "config": {
+          "headers": {
+            "X-User": "{{ print .Subject }}",
             "x-user-email": "{{ print .Extra.email }}",
             "x-user-picture": "{{ print .Extra.picture }}"
           }

@@ -75,8 +75,7 @@
         "config": {
           "headers": {
             "X-User-id": "{{ print .Subject }}",
-            "x-user-email": "{{ print .Extra.email }}",
-            "x-user-picture": "{{ print .Extra.picture }}"
+            "x-user-email": "{{ print .Extra.email }}"
           }
         }
       }

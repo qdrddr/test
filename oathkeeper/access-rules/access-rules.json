@@ -77,7 +77,7 @@
             "X-User-id": "{{ print .Subject }}",
             "x-user-email": "{{ print .Extra.email }}",
             "x-user-groups": "[{{ range $index, $element := .Extra.groups }}{{ if $index }}, {{ end }}'{{ $element }}'{{ end }}]",
-            "x-user-attributes": "[{{ range $key, $value := .Extra.ak_proxy.user_attributes }}{{ if ne $key \"\" }}, {{ end }}\"{{ $key }}\": \"{{ $value }}\"{{ end }}]"
+            "x-user-attributes": "[{{ range $key, $value := .Extra.ak_proxy.user_attributes }}{{ if ne $key '' }}, {{ end }}'{{ $key }}': '{{ $value }}'{{ end }}]"
           }
         }
       }

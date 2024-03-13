@@ -64,7 +64,7 @@
     },
     "authenticators": [
       {
-        "handler": "jwt"
+        "handler": "noop"
       }
     ],
     "authorizer": {

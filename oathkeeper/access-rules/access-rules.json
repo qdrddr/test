@@ -75,7 +75,8 @@
         "config": {
           "headers": {
             "X-User-id": "{{ print .Subject }}",
-            "x-user-email": "{{ print .Extra.email }}"
+            "x-user-email": "{{ print .Extra.email }}",
+            "x-user-groups": "[{{ range $index, $element := .Extra.groups }}{{ if $index }}, {{ end }}'{{ $element }}'{{ end }}]"
           }
         }
       }

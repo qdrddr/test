@@ -46,7 +46,7 @@
           "headers": {
             "x-user-id": "{{ print .Subject }}",
             "x-user-email": "{{ print .Extra.email }}",
-            "x-user-picture": "{{ print .Extra.picture }}"
+            "x-user-groups": "{{ range $index, $element := .Extra.groups }}{{ if $index }}, {{ end }}\"{{ $element }}\"{{ end }}"
           }
         }
       }

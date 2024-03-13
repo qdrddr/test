@@ -46,7 +46,6 @@
           "headers": {
             "x-user-id": "{{ print .Subject }}",
             "x-user-email": "{{ print .Extra.email }}",
-            "x-user-groups": "{{ range $index, $element := .Extra.groups }}{{ if $index }}, {{ end }}\"{{ $element }}\"{{ end }}"
           }
         }
       }
@@ -78,7 +77,7 @@
             "X-User-id": "{{ print .Subject }}",
             "x-user-email": "{{ print .Extra.email }}",
             "x-user-picture": "{{ print .Extra.picture }}",
-            "x-user-groups": "{{ print .Extra.groups }}"
+            "x-user-groups": "{{ range $index, $element := .Extra.groups }}{{ if $index }}, {{ end }}'{{ $element }}'{{ end }}"
           }
         }
       }

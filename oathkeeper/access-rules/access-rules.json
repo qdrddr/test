@@ -5,7 +5,7 @@
       "url": "http://oathkeeper-oauth2-jwt:9000"
     },
     "match": {
-      "url": "https://proxy-oathk.wiseinfotec.net/myauth/<.*>",
+      "url": "https://proxy-oathk.wiseinfotec.net/auth/<.*>",
       "methods": ["GET"]
     },
     "authenticators": [

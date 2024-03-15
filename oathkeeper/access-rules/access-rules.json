@@ -21,7 +21,7 @@
         "handler": "header",
         "config": {
           "headers": {
-            "X-Original-URL": "{{ print .Request.URL }}"
+            "X-Original-URL": "{{ print \"https://www.wiseinfotec.net/bot\" }}"
           }
         }
       }

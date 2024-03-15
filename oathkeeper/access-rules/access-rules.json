@@ -18,12 +18,11 @@
     },
     "mutators": [
       {
-        "handler": "query",
+        "handler": "header",
         "config": {
-          "query_parameter": "original_url",
-          "values": [
-            "{{ print .Request.URL }}"
-          ]
+          "headers": {
+            "X-Original-URL": "{{ url_encode .Request.URL }}"
+          }
         }
       }
     ]

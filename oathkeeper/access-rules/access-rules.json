@@ -1,8 +1,8 @@
 [
   {
-    "id": "oathkeeper-oauth2-jwt-service-rule",
+    "id": "oathkeeper-oauth2-jwks-service-rule",
     "upstream": {
-      "url": "http://oathkeeper-oauth2-jwt:9000"
+      "url": "http://oathkeeper-oauth2-jwks:9000"
     },
     "match": {
       "url": "https://proxy-oathk.wiseinfotec.net/auth/<.*>",
@@ -23,9 +23,9 @@
     ]
   },
   {
-    "id": "oathkeeper-oauth2-jwt-whoami-service-rule",
+    "id": "oathkeeper-oauth2-jwks-whoami-service-rule",
     "upstream": {
-      "url": "http://oathkeeper-oauth2-jwt-whoami:9001"
+      "url": "http://oathkeeper-oauth2-jwks-whoami:9001"
     },
     "match": {
       "url": "https://proxy-oathk.wiseinfotec.net/whoami",

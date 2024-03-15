@@ -22,7 +22,7 @@
         "config": {
           "query_parameter": "original_url",
           "values": [
-            "{{ .RequestURL }}"
+            "{{ print .Request.URL }}"
           ]
         }
       }

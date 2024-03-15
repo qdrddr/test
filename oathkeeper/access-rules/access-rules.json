@@ -18,7 +18,13 @@
     },
     "mutators": [
       {
-        "handler": "noop"
+        "handler": "query",
+        "config": {
+          "query_parameter": "original_url",
+          "values": [
+            "{{ .RequestURL }}"
+          ]
+        }
       }
     ]
   },

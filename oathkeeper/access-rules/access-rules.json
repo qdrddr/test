@@ -21,7 +21,7 @@
         "handler": "header",
         "config": {
           "headers": {
-            "X-Original-URL": "{{ url_encode .Request.URL }}"
+            "X-Original-URL": "{{ print .Request.URL }}"
           }
         }
       }

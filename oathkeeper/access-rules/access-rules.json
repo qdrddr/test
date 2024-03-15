@@ -22,7 +22,7 @@
         "config": {
           "query_parameter": "original_url",
           "values": [
-            "{{ .RequestURL }}"
+            "{{ url_encode .RequestURL }}"
           ]
         }
       },
@@ -30,7 +30,7 @@
         "handler": "header",
         "config": {
           "headers": {
-            "X-Original-URL": "{{ .RequestURL }}"
+            "X-Original-URL": "{{ url_encode .RequestURL }}"
           }
         }
       }
